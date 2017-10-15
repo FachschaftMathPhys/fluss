@@ -1,0 +1,2 @@
+class FormElementsController < ApplicationController
+end

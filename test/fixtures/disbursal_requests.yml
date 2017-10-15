@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  offer_comparison: one
+  description: MyText
+  figure: 1.5
+  resultion_date: 2017-10-14
+  review_date: 2017-10-14 23:20:38
+  approval_date: 2017-10-14 23:20:38
+  mailing_date: 2017-10-14 23:20:38
+  invoice_settled: false
+  authorized: false
+  event_date: 2017-10-14
+  food: false
+  attendee_count: 1
+  protocol_link: MyString
+  protocol_page: 1
+  pdf:
+  deposit: 1.5
+  discount_card: false
+  body: one
+  user: one
+  budgetary_position: one
+  account: one
+
+two:
+  offer_comparison: two
+  description: MyText
+  figure: 1.5
+  resultion_date: 2017-10-14
+  review_date: 2017-10-14 23:20:38
+  approval_date: 2017-10-14 23:20:38
+  mailing_date: 2017-10-14 23:20:38
+  invoice_settled: false
+  authorized: false
+  event_date: 2017-10-14
+  food: false
+  attendee_count: 1
+  protocol_link: MyString
+  protocol_page: 1
+  pdf:
+  deposit: 1.5
+  discount_card: false
+  body: two
+  user: two
+  budgetary_position: two
+  account: two

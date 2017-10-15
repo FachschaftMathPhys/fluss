@@ -1,0 +1,2 @@
+class DisbursalRequestsController < ApplicationController
+end

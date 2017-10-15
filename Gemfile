@@ -39,3 +39,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# jsonapi-resources
+gem 'jsonapi-resources'
+gem "ember-cli-rails"
+gem 'faker'
+gem 'rails-erd', require: false, group: :development

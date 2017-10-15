@@ -1,0 +1,2 @@
+class ContainsController < ApplicationController
+end

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price1: 1.5
+  price2: 1.5
+  price3: 1.5
+  product_description1: MyText
+  product_description2: MyText
+  production_description3: MyText
+  offeror1: MyString
+  offeror2: MyString
+  offeror3: MyString
+  link1: MyString
+  link2: MyString
+  link3: MyString
+
+two:
+  price1: 1.5
+  price2: 1.5
+  price3: 1.5
+  product_description1: MyText
+  product_description2: MyText
+  production_description3: MyText
+  offeror1: MyString
+  offeror2: MyString
+  offeror3: MyString
+  link1: MyString
+  link2: MyString
+  link3: MyString

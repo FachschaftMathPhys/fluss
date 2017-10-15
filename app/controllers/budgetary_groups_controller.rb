@@ -1,0 +1,2 @@
+class BudgetaryGroupsController < ApplicationController
+end

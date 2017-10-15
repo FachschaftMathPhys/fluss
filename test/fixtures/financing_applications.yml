@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  session_date: 2017-10-14
+  figure: 1.5
+  applicant: MyString
+  description: MyText
+  justification: MyText
+  miscellenea: MyText
+
+two:
+  session_date: 2017-10-14
+  figure: 1.5
+  applicant: MyString
+  description: MyText
+  justification: MyText
+  miscellenea: MyText

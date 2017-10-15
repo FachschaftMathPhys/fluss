@@ -1,0 +1,2 @@
+class TheoretikumBillingsController < ApplicationController
+end

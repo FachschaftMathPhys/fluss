@@ -1,0 +1,2 @@
+class DrOcNecessariesController < ApplicationController
+end

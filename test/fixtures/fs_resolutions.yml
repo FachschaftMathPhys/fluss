@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  offer_comparison: one
+  budgetary_position: one
+  figure: 1.5
+  description: MyText
+  justification: MyText
+
+two:
+  offer_comparison: two
+  budgetary_position: two
+  figure: 1.5
+  description: MyText
+  justification: MyText

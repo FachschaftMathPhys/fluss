@@ -1,0 +1,2 @@
+class DrinkPositionsController < ApplicationController
+end

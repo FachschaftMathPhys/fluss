@@ -1,0 +1,2 @@
+class FsResolutionsController < ApplicationController
+end

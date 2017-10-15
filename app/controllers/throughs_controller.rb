@@ -1,0 +1,2 @@
+class ThroughsController < ApplicationController
+end

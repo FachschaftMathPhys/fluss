@@ -1,0 +1,2 @@
+class InpaymentDeclarationsController < ApplicationController
+end

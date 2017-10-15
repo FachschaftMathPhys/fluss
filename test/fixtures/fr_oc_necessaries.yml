@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  offer_comparison: one
+  fs_resolution: one
+
+two:
+  offer_comparison: two
+  fs_resolution: two

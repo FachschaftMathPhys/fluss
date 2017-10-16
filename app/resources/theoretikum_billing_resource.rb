@@ -4,3 +4,5 @@ class TheoretikumBillingResource < JSONAPI::Resource
   has_one :budgetary_position
   has_one :body
 end
+# Theorektikumsabrechnung
+# Einreichungsdatum, binary des Scans, Beschlussdatum, Überprüfungsdatum, Bestätigungsdatum, Versendedatum, Handelt es sich um Druckerkosten, oder Schrankmiete?, oder sonstiges (spezifizieren), oder Porto?, Betragshöhe, Veranstaltungsdatum, Protokolllin zum Beschluss, Seitenzahl im Protokoll zum Beschluss

@@ -83,13 +83,11 @@ ActiveRecord::Schema.define(version: 20171015013846) do
     t.integer "user_id"
     t.integer "budgetary_position_id"
     t.integer "account_id"
-    t.integer "offer_comparison_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["account_id"], name: "index_disbursal_requests_on_account_id"
     t.index ["body_id"], name: "index_disbursal_requests_on_body_id"
     t.index ["budgetary_position_id"], name: "index_disbursal_requests_on_budgetary_position_id"
-    t.index ["offer_comparison_id"], name: "index_disbursal_requests_on_offer_comparison_id"
     t.index ["user_id"], name: "index_disbursal_requests_on_user_id"
   end
 
@@ -155,7 +153,6 @@ ActiveRecord::Schema.define(version: 20171015013846) do
   end
 
   create_table "fs_resolutions", force: :cascade do |t|
-    t.integer "offer_comparison_id"
     t.integer "budgetary_position_id"
     t.decimal "figure"
     t.text "description"
@@ -163,7 +160,6 @@ ActiveRecord::Schema.define(version: 20171015013846) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["budgetary_position_id"], name: "index_fs_resolutions_on_budgetary_position_id"
-    t.index ["offer_comparison_id"], name: "index_fs_resolutions_on_offer_comparison_id"
   end
 
   create_table "inpayment_declarations", force: :cascade do |t|
@@ -213,6 +209,7 @@ ActiveRecord::Schema.define(version: 20171015013846) do
     t.string "link1"
     t.string "link2"
     t.string "link3"
+    t.text "explanation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -243,6 +240,7 @@ ActiveRecord::Schema.define(version: 20171015013846) do
 
   create_table "selections", force: :cascade do |t|
     t.text "explanation"
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -267,7 +265,6 @@ ActiveRecord::Schema.define(version: 20171015013846) do
     t.string "miscellenea"
     t.boolean "postage"
     t.integer "body_id"
-    t.integer "offer_comparison_id"
     t.decimal "figure"
     t.binary "pdf"
     t.date "event_date"
@@ -278,7 +275,6 @@ ActiveRecord::Schema.define(version: 20171015013846) do
     t.datetime "updated_at", null: false
     t.index ["body_id"], name: "index_theoretikum_billings_on_body_id"
     t.index ["budgetary_position_id"], name: "index_theoretikum_billings_on_budgetary_position_id"
-    t.index ["offer_comparison_id"], name: "index_theoretikum_billings_on_offer_comparison_id"
   end
 
   create_table "throughs", force: :cascade do |t|

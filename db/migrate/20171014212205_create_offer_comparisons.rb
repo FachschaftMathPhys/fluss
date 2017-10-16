@@ -13,7 +13,7 @@ class CreateOfferComparisons < ActiveRecord::Migration[5.1]
       t.string :link1
       t.string :link2
       t.string :link3
-
+      t.text :explanation
       t.timestamps
     end
   end

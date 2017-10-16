@@ -11,7 +11,6 @@ class CreateTheoretikumBillings < ActiveRecord::Migration[5.1]
       t.string :miscellenea
       t.boolean :postage
       t.references :body, foreign_key: true
-      t.references :offer_comparison, foreign_key: true
       t.decimal :figure
       t.binary :pdf
       t.date :event_date

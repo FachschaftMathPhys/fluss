@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   jsonapi_resources :decisions
   jsonapi_resources :disbursal_requests
   jsonapi_resources :drink_positions
-  jsonapi_resources :drinks
   jsonapi_resources :financing_applications
   jsonapi_resources :form_elements
   jsonapi_resources :forms

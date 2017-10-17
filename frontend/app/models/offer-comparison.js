@@ -13,8 +13,5 @@ export default DS.Model.extend({
   link1: DS.attr('string'),
   link2: DS.attr('string'),
   link3: DS.attr('string'),
-  explanation: DS.attr('string'),
-  disbursalRequest: DS.belongsTo('disbursal-request'),
-  theoretikumBilling: DS.belongsTo('theoretikum-billing'),
-  fsResolution: DS.belongsTo('fs-resolution')
+  explanation: DS.attr('string')
 });

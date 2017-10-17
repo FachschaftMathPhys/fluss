@@ -5,7 +5,7 @@ class CreateFsResolutions < ActiveRecord::Migration[5.1]
       t.decimal :figure
       t.text :description
       t.text :justification
-
+      t.references :offer_comparison, foreign_key: true
       t.timestamps
     end
   end

@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171015013846) do
+ActiveRecord::Schema.define(version: 20171014221824) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "iban"
     t.string "bic"
     t.string "recipient"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_accounts_on_user_id"
   end
 
   create_table "bodies", force: :cascade do |t|
@@ -81,6 +83,7 @@ ActiveRecord::Schema.define(version: 20171015013846) do
     t.boolean "discount_card"
     t.integer "body_id"
     t.integer "user_id"
+    t.integer "offer_comparison_id"
     t.integer "budgetary_position_id"
     t.integer "account_id"
     t.datetime "created_at", null: false
@@ -88,16 +91,8 @@ ActiveRecord::Schema.define(version: 20171015013846) do
     t.index ["account_id"], name: "index_disbursal_requests_on_account_id"
     t.index ["body_id"], name: "index_disbursal_requests_on_body_id"
     t.index ["budgetary_position_id"], name: "index_disbursal_requests_on_budgetary_position_id"
+    t.index ["offer_comparison_id"], name: "index_disbursal_requests_on_offer_comparison_id"
     t.index ["user_id"], name: "index_disbursal_requests_on_user_id"
-  end
-
-  create_table "dr_oc_necessaries", force: :cascade do |t|
-    t.integer "offer_comparison_id"
-    t.integer "disbursal_request_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["disbursal_request_id"], name: "index_dr_oc_necessaries_on_disbursal_request_id"
-    t.index ["offer_comparison_id"], name: "index_dr_oc_necessaries_on_offer_comparison_id"
   end
 
   create_table "drink_positions", force: :cascade do |t|
@@ -105,17 +100,10 @@ ActiveRecord::Schema.define(version: 20171015013846) do
     t.integer "quantity"
     t.float "volume"
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "drinks", force: :cascade do |t|
-    t.integer "drink_position_id"
     t.integer "disbursal_request_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["disbursal_request_id"], name: "index_drinks_on_disbursal_request_id"
-    t.index ["drink_position_id"], name: "index_drinks_on_drink_position_id"
+    t.index ["disbursal_request_id"], name: "index_drink_positions_on_disbursal_request_id"
   end
 
   create_table "financing_applications", force: :cascade do |t|
@@ -143,23 +131,16 @@ ActiveRecord::Schema.define(version: 20171015013846) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "fr_oc_necessaries", force: :cascade do |t|
-    t.integer "offer_comparison_id"
-    t.integer "fs_resolution_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["fs_resolution_id"], name: "index_fr_oc_necessaries_on_fs_resolution_id"
-    t.index ["offer_comparison_id"], name: "index_fr_oc_necessaries_on_offer_comparison_id"
-  end
-
   create_table "fs_resolutions", force: :cascade do |t|
     t.integer "budgetary_position_id"
     t.decimal "figure"
     t.text "description"
     t.text "justification"
+    t.integer "offer_comparison_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["budgetary_position_id"], name: "index_fs_resolutions_on_budgetary_position_id"
+    t.index ["offer_comparison_id"], name: "index_fs_resolutions_on_offer_comparison_id"
   end
 
   create_table "inpayment_declarations", force: :cascade do |t|
@@ -229,29 +210,11 @@ ActiveRecord::Schema.define(version: 20171015013846) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "ownerships", force: :cascade do |t|
-    t.integer "account_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_ownerships_on_account_id"
-    t.index ["user_id"], name: "index_ownerships_on_user_id"
-  end
-
   create_table "selections", force: :cascade do |t|
     t.text "explanation"
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "tb_oc_necessaries", force: :cascade do |t|
-    t.integer "offer_comparison_id"
-    t.integer "theoretikum_billing_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["offer_comparison_id"], name: "index_tb_oc_necessaries_on_offer_comparison_id"
-    t.index ["theoretikum_billing_id"], name: "index_tb_oc_necessaries_on_theoretikum_billing_id"
   end
 
   create_table "theoretikum_billings", force: :cascade do |t|
@@ -271,10 +234,12 @@ ActiveRecord::Schema.define(version: 20171015013846) do
     t.string "protocol_link"
     t.integer "protocol_page"
     t.integer "budgetary_position_id"
+    t.integer "offer_comparison_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["body_id"], name: "index_theoretikum_billings_on_body_id"
     t.index ["budgetary_position_id"], name: "index_theoretikum_billings_on_budgetary_position_id"
+    t.index ["offer_comparison_id"], name: "index_theoretikum_billings_on_offer_comparison_id"
   end
 
   create_table "throughs", force: :cascade do |t|

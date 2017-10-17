@@ -1,2 +1,0 @@
-class FrOcNecessariesController < ApplicationController
-end

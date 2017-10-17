@@ -1,2 +1,0 @@
-class TbOcNecessariesController < ApplicationController
-end

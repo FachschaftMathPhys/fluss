@@ -7,7 +7,6 @@ class CreateBudgetaryPositions < ActiveRecord::Migration[5.1]
       t.text :description
       t.string :examples
       t.references :budgetary_group, foreign_key: true
-
       t.timestamps
     end
   end

@@ -4,7 +4,7 @@ class CreateAccounts < ActiveRecord::Migration[5.1]
       t.string :iban
       t.string :bic
       t.string :recipient
-
+      t.references :user, foreign_key: true
       t.timestamps
     end
   end

@@ -1,5 +1,4 @@
 class Account < ApplicationRecord
-  has_one :ownership
-  has_one :user, through: :ownership
+  belongs_to :user
   has_many :disbursal_requests, dependent: :destroy
 end

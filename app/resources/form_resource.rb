@@ -1,5 +1,5 @@
 class FormResource < JSONAPI::Resource
   attributes :title # Überschrift des Formulars
-  has_many :selections # zugeordnete Auswahldialoge
+  relationship :selections, to: :many # zugeordnete Auswahldialoge
 end
 # Formular als Teil eines Auswahldialogs

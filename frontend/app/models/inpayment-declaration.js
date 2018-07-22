@@ -12,7 +12,7 @@ export default DS.Model.extend({
   reviewDate: DS.attr('date'),
   submissionDate: DS.attr('date'),
   approvalDate: DS.attr('date'),
-  authorized: DS.attr('boolean')
-  body: DS.belongsTo('body')
+  authorized: DS.attr('boolean'),
+  body: DS.belongsTo('body'),
   budgetaryPosition: DS.belongsTo('budgetary-position')
 });

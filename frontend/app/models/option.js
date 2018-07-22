@@ -1,6 +1,7 @@
 import DS from 'ember-data';
-
+const {attr,hasMany,belongsTo} = DS
 export default DS.Model.extend({
-  label: DS.attr('string'),
-  decisions: DS.hasMany('decision')
+  label: attr('string'),
+  decisions: hasMany('decision'),
+  optionfollowup: belongsTo('optionfollowup',{polymorphic:true})
 });

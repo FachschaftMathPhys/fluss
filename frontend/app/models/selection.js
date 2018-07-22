@@ -1,7 +1,10 @@
 import DS from 'ember-data';
-
+const {attr,hasMany,belongsTo} = DS
 export default DS.Model.extend({
-  explanation: DS.attr('string'),
-  title: DS.attr('string'),
-  forms: DS.hasMany('form')
+  explanation: attr('string'),
+  title: attr('string'),
+  forms: hasMany('form'),
+  options: hasMany('option'),
+  initmodels: hasMany('initmodel'),
+  first: belongsTo('start')
 });

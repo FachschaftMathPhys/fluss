@@ -1,0 +1,2 @@
+class OptionfollowupsController < ApplicationController
+end

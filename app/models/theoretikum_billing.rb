@@ -1,4 +1,6 @@
 class TheoretikumBilling < ApplicationRecord
-  belongs_to :offer_comparison
+  has_many :associated_withs, as: :expense
+  has_many :offer_comparisons, through: :associated_withs
+  belongs_to :tbstep, polymorphic: true
   belongs_to :budgetary_position
 end

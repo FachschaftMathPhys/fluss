@@ -22,6 +22,6 @@ export default DS.Model.extend({
   budgetaryPosition: DS.belongsTo('budgetary-position'),
   body: DS.belongsTo('body'),
   user: DS.belongsTo('user'),
-  offerComparison: DS.belongsTo('offer-comparison'),
+  offerComparison: DS.hasMany('offer-comparison'),
   account: DS.belongsTo('account')
 });

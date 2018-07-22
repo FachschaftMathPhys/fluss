@@ -1,0 +1,2 @@
+class DrstepsController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class IdstepsController < ApplicationController
+end

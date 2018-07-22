@@ -1,0 +1,2 @@
+class FsstepsController < ApplicationController
+end

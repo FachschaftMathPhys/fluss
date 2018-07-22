@@ -1,7 +1,29 @@
 
 for i in 0..10
   User.create!(name:Faker::Name.name, username:Faker::Internet.user_name)
+  puts Faker::Name.name
+  puts Faker::Internet.user_name
+end
+
+
+
+
+
+puts "Hello12"
+
+for i in 0..5
   Account.create!(bic:Faker::Bank.swift_bic,iban:Faker::Crypto.md5,recipient:Faker::Name.name)
+end
+
+
+
+
+
+
+
+puts "Hello23"
+
+for i in 0..5
   Ownership.create!(account:Account.offset(rand(Account.count)).first,user:User.offset(rand(User.count)).first)
 end
 BudgetaryGroup.create!(name:"Einnahmen")

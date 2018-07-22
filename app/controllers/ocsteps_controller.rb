@@ -1,0 +1,2 @@
+class OcstepsController < ApplicationController
+end

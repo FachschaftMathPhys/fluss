@@ -1,0 +1,2 @@
+class SelfollowupsController < ApplicationController
+end

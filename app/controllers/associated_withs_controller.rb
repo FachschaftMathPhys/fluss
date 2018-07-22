@@ -1,0 +1,2 @@
+class AssociatedWithsController < ApplicationController
+end

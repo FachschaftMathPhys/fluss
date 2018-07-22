@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  model: MyString
+  initfollowup: one
+  initfollowup_type: Initfollowup
+
+two:
+  model: MyString
+  initfollowup: two
+  initfollowup_type: Initfollowup

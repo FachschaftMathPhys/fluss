@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171014221824) do
+ActiveRecord::Schema.define(version: 20180627200158) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "iban"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 20171014221824) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_accounts_on_user_id"
+  end
+
+  create_table "associated_withs", force: :cascade do |t|
+    t.string "expense_type"
+    t.integer "expense_id"
+    t.integer "offer_comparison_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["expense_type", "expense_id"], name: "index_associated_withs_on_expense_type_and_expense_id"
+    t.index ["offer_comparison_id"], name: "index_associated_withs_on_offer_comparison_id"
   end
 
   create_table "bodies", force: :cascade do |t|
@@ -45,6 +55,11 @@ ActiveRecord::Schema.define(version: 20171014221824) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["budgetary_group_id"], name: "index_budgetary_positions_on_budgetary_group_id"
+  end
+
+  create_table "completions", force: :cascade do |t|
+    t.text "success"
+    t.text "failure"
   end
 
   create_table "contains", force: :cascade do |t|
@@ -83,15 +98,16 @@ ActiveRecord::Schema.define(version: 20171014221824) do
     t.boolean "discount_card"
     t.integer "body_id"
     t.integer "user_id"
-    t.integer "offer_comparison_id"
     t.integer "budgetary_position_id"
     t.integer "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "drstep_type"
+    t.integer "drstep_id"
     t.index ["account_id"], name: "index_disbursal_requests_on_account_id"
     t.index ["body_id"], name: "index_disbursal_requests_on_body_id"
     t.index ["budgetary_position_id"], name: "index_disbursal_requests_on_budgetary_position_id"
-    t.index ["offer_comparison_id"], name: "index_disbursal_requests_on_offer_comparison_id"
+    t.index ["drstep_type", "drstep_id"], name: "index_disbursal_requests_on_drstep_type_and_drstep_id"
     t.index ["user_id"], name: "index_disbursal_requests_on_user_id"
   end
 
@@ -115,6 +131,9 @@ ActiveRecord::Schema.define(version: 20171014221824) do
     t.text "miscellenea"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "fastep_type"
+    t.integer "fastep_id"
+    t.index ["fastep_type", "fastep_id"], name: "index_financing_applications_on_fastep_type_and_fastep_id"
   end
 
   create_table "form_elements", force: :cascade do |t|
@@ -136,11 +155,21 @@ ActiveRecord::Schema.define(version: 20171014221824) do
     t.decimal "figure"
     t.text "description"
     t.text "justification"
-    t.integer "offer_comparison_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "fsstep_type"
+    t.integer "fsstep_id"
     t.index ["budgetary_position_id"], name: "index_fs_resolutions_on_budgetary_position_id"
-    t.index ["offer_comparison_id"], name: "index_fs_resolutions_on_offer_comparison_id"
+    t.index ["fsstep_type", "fsstep_id"], name: "index_fs_resolutions_on_fsstep_type_and_fsstep_id"
+  end
+
+  create_table "initmodels", force: :cascade do |t|
+    t.string "model"
+    t.string "initfollowup_type"
+    t.integer "initfollowup_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["initfollowup_type", "initfollowup_id"], name: "index_initmodels_on_initfollowup_type_and_initfollowup_id"
   end
 
   create_table "inpayment_declarations", force: :cascade do |t|
@@ -160,8 +189,11 @@ ActiveRecord::Schema.define(version: 20171014221824) do
     t.integer "body_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "idstep_type"
+    t.integer "idstep_id"
     t.index ["body_id"], name: "index_inpayment_declarations_on_body_id"
     t.index ["budgetary_position_id"], name: "index_inpayment_declarations_on_budgetary_position_id"
+    t.index ["idstep_type", "idstep_id"], name: "index_inpayment_declarations_on_idstep_type_and_idstep_id"
   end
 
   create_table "inventory_items", force: :cascade do |t|
@@ -193,6 +225,9 @@ ActiveRecord::Schema.define(version: 20171014221824) do
     t.text "explanation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ocstep_type"
+    t.integer "ocstep_id"
+    t.index ["ocstep_type", "ocstep_id"], name: "index_offer_comparisons_on_ocstep_type_and_ocstep_id"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -205,9 +240,12 @@ ActiveRecord::Schema.define(version: 20171014221824) do
   end
 
   create_table "options", force: :cascade do |t|
+    t.string "optionfollowup_type"
+    t.integer "optionfollowup_id"
     t.string "label"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["optionfollowup_type", "optionfollowup_id"], name: "index_options_on_optionfollowup_type_and_optionfollowup_id"
   end
 
   create_table "selections", force: :cascade do |t|
@@ -215,6 +253,17 @@ ActiveRecord::Schema.define(version: 20171014221824) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "selfollowup_type"
+    t.integer "selfollowup_id"
+    t.index ["selfollowup_type", "selfollowup_id"], name: "index_selections_on_selfollowup_type_and_selfollowup_id"
+  end
+
+  create_table "starts", force: :cascade do |t|
+    t.string "first_type"
+    t.integer "first_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["first_type", "first_id"], name: "index_starts_on_first_type_and_first_id"
   end
 
   create_table "theoretikum_billings", force: :cascade do |t|
@@ -234,12 +283,13 @@ ActiveRecord::Schema.define(version: 20171014221824) do
     t.string "protocol_link"
     t.integer "protocol_page"
     t.integer "budgetary_position_id"
-    t.integer "offer_comparison_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tbstep_type"
+    t.integer "tbstep_id"
     t.index ["body_id"], name: "index_theoretikum_billings_on_body_id"
     t.index ["budgetary_position_id"], name: "index_theoretikum_billings_on_budgetary_position_id"
-    t.index ["offer_comparison_id"], name: "index_theoretikum_billings_on_offer_comparison_id"
+    t.index ["tbstep_type", "tbstep_id"], name: "index_theoretikum_billings_on_tbstep_type_and_tbstep_id"
   end
 
   create_table "throughs", force: :cascade do |t|

@@ -1,6 +1,6 @@
 class FsResolutionResource < JSONAPI::Resource
   attributes :figure, :description, :justification
-  relationship :offer_comparison, to: :one # 3-Vergleichsangebote bei Summen >500€
+  relationship :offer_comparison, to: :many # 3-Vergleichsangebote bei Summen >500€
   relationship :budgetary_position, to: :one # Haushaltsplanposten
 end
 # Antrag für eine Fachschaftssitzung

@@ -15,7 +15,7 @@ export default DS.Model.extend({
   eventDate: DS.attr('date'),
   protocolLink: DS.attr('string'),
   protocolPage: DS.attr('number'),
-  offerComparison: DS.belongsTo('offer-comparison'),
+  offerComparison: DS.hasMany('offer-comparison'),
   budgetaryPosition: DS.belongsTo('budgetary-position'),
   body: DS.belongsTo('body')
 });

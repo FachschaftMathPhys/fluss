@@ -17,7 +17,6 @@ class CreateTheoretikumBillings < ActiveRecord::Migration[5.1]
       t.string :protocol_link
       t.integer :protocol_page
       t.references :budgetary_position, foreign_key: true
-      t.references :offer_comparison, foreign_key: true
       t.timestamps
     end
   end

@@ -29,10 +29,12 @@ export default Controller.extend({
     return a;
   }),
   deepRecursive(m,i){
+    var _this=this;
     let sub="";
     if(m=="decision"){
-      console.log(this.get('model.decisions.content')[0]);
+      console.log(_this.get("model.decisions").filterBy("id",i).get("firstObject"));
 
+      //console.log(s);
       var a=this.get("store").peekRecord("decision",i,{include: "ownoptions"});
       //console.log(a);
       //let op=this.get("model"+i+"ownoptions");

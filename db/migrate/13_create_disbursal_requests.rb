@@ -20,7 +20,6 @@ class CreateDisbursalRequests < ActiveRecord::Migration[5.1]
       t.boolean :discount_card
       t.references :body, foreign_key: true
       t.references :user, foreign_key: true
-      t.references :offer_comparison, foreign_key: true
       t.references :budgetary_position, foreign_key: true
       t.references :account, foreign_key: true
       t.timestamps

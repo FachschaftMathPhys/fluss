@@ -14,5 +14,7 @@ export default DS.Model.extend({
   approvalDate: DS.attr('date'),
   authorized: DS.attr('boolean'),
   body: DS.belongsTo('body'),
-  budgetaryPosition: DS.belongsTo('budgetary-position')
+  budgetaryPosition: DS.belongsTo('budgetary-position'),
+  user: DS.belongsTo('user'),
+  idstep: DS.belongsTo('dialogstep',{polymorphic:true})
 });

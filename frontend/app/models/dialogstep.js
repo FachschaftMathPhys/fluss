@@ -2,11 +2,13 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   start: DS.belongsTo('start',{inverse: 'first'}),
-  financingApplications: DS.hasMany('financingApplication',{inverse: 'fastep'}),
-  disbursalRequests: DS.hasMany('disbursalRequest',{inverse:'drstep'}),
-  offerComparisons: DS.hasMany('offerComparison',{inverse:'ocstep'}),
-  inpaymentDeclarations: DS.hasMany('inpaymentDeclaration',{inverse:'idstep'}),
-  theoretikumBillings: DS.hasMany('theoretikumBilling',{inverse:'tbstep'}),
-  fsResolutions: DS.hasMany('fsResolution',{inverse: 'frstep'})
-
+  options: DS.hasMany('option',{inverse:'optionfollowup'}),
+  initmodels: DS.hasMany('initmodel',{inverse: 'initfollowup'}),
+  selections: DS.hasMany('selection',{inverse: 'selfollowup'}),
+  inpaymentDeclarations: DS.hasMany('inpayment-declaration',{inverse:'idstep'}),
+  offerComparisons: DS.hasMany('offer-comparison',{inverse:'ocstep'}),
+  theoretikumBillings: DS.hasMany('theoretikum-billing',{inverse:'tbstep'}),
+  financingApplications: DS.hasMany('financing-application',{inverse:'fastep'}),
+  disbursalRequests: DS.hasMany('disbursal-request',{inverse:'drstep'}),
+  fsResolutions: DS.hasMany('fs-resolution',{inverse:'fsstep'}),
 });

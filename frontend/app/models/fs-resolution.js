@@ -5,5 +5,7 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   justification: DS.attr('string'),
   offerComparison: DS.hasMany('offer-comparison'),
-  budgetaryPosition: DS.belongsTo('budgetary-position')
+  budgetaryPosition: DS.belongsTo('budgetary-position'),
+  user: DS.belongsTo('user'),
+  fsstep: DS.belongsTo('dialogstep',{polymorphic:true})
 });

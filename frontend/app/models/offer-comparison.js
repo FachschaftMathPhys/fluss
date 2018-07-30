@@ -13,5 +13,7 @@ export default DS.Model.extend({
   link1: DS.attr('string'),
   link2: DS.attr('string'),
   link3: DS.attr('string'),
-  explanation: DS.attr('string')
+  explanation: DS.attr('string'),
+  user: DS.belongsTo('user'),
+  ocstep: DS.belongsTo('dialogstep',{polymorphic:true})
 });

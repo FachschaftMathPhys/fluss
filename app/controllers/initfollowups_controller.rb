@@ -1,0 +1,2 @@
+class InitfollowupsController < ApplicationController
+end

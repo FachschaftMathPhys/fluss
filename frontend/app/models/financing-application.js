@@ -7,6 +7,7 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   justification: DS.attr('string'),
   miscellenea: DS.attr('string'),
-  fastep: DS.belongsTo('dialogstep',{polymorphic:true}),
-  offerComparison:DS.hasMany('offer-comparison')
+  offerComparison:DS.hasMany('offer-comparison'),
+  user: DS.belongsTo('user'),
+  fastep: DS.belongsTo('dialogstep',{polymorphic:true})
 });

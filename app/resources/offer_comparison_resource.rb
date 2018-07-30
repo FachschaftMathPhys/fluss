@@ -5,5 +5,6 @@ class OfferComparisonResource < JSONAPI::Resource
   relationship :fs_resolution, to: :many # Fachschaftssitzungsantrag
   relationship :financing_application, to: :many
   has_one :ocstep, polymorphic: true
+  relationship :user, to: :one
 end
 # 3- Vergleichsangebote: jeweils Preis, Produktbezeichnung, Anbieter, Link zur Angebotsseite/Datei des Scans, Erklärung, warum das eine Angebot vor dem anderen bevorzugt wurde

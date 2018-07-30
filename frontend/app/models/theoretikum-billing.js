@@ -17,5 +17,7 @@ export default DS.Model.extend({
   protocolPage: DS.attr('number'),
   offerComparison: DS.hasMany('offer-comparison'),
   budgetaryPosition: DS.belongsTo('budgetary-position'),
-  body: DS.belongsTo('body')
+  body: DS.belongsTo('body'),
+  user: DS.belongsTo('user'),
+  tbstep: DS.belongsTo('dialogstep',{polymorphic:true})
 });

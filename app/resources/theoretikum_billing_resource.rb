@@ -3,6 +3,7 @@ class TheoretikumBillingResource < JSONAPI::Resource
   relationship :offer_comparison, to: :many
   relationship :budgetary_position, to: :one
   relationship :body, to: :one
+  relationship :user, to: :one
   has_one :tbstep, polymorphic: true
 end
 # Theorektikumsabrechnung

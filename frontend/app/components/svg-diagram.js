@@ -3,8 +3,7 @@ import Flowchart from 'flowchart';
 import Ember from 'ember';
 
 export default Component.extend({
-  didRender: function() {
-    console.log(this.get('content'));
+  didInsertElement: function() {
     this._super(...arguments);
     this.send('draw');
   },

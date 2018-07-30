@@ -20,5 +20,8 @@ Rails.application.routes.draw do
   jsonapi_resources :theoretikum_billings
   jsonapi_resources :throughs
   jsonapi_resources :users
+  jsonapi_resources :completions
+  jsonapi_resources :initmodels
+  jsonapi_resources :starts
   mount_ember_app :frontend, to: "/"
 end

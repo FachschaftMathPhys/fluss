@@ -23,5 +23,6 @@ export default DS.Model.extend({
   body: DS.belongsTo('body'),
   user: DS.belongsTo('user'),
   offerComparison: DS.hasMany('offer-comparison'),
-  account: DS.belongsTo('account')
+  account: DS.belongsTo('account'),
+  drstep: DS.belongsTo('dialogstep',{polymorphic:true})
 });

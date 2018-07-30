@@ -1,2 +1,5 @@
-{{paper-input textarea=true block=true value=ta onChange=(action (mut ta))}}
-{{svg-diagram content=ta}}
+{{paper-input textarea=true block=true value=test onChange=(action (mut test))}}
+{{svg-diagram content=diagramcontent}}
+{{#each model.decisions as |decision|}}
+  {{decision.explanation}}
+{{/each}}

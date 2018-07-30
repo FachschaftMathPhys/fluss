@@ -1,2 +1,0 @@
-class InitmodelfollowupsController < ApplicationController
-end

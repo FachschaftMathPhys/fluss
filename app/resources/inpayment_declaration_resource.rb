@@ -3,5 +3,6 @@ class InpaymentDeclarationResource < JSONAPI::Resource
   relationship :budgetary_position, to: :one # Haushaltsplanposten
   relationship :body, to: :one # einnehmende VS-Stelle
   has_one :idstep, polymorphic: true
+  relationship :user, to: :one
 end
 # Einzahlungsantrag: Betragshöhe, Einnahmedatum, binary des eingescannten Antrags, Veranstaltungsdatums, Einzahlungsdatum, ob Einazahlungsbeleg vorhanden, Versendedatum, ob Kassenabrechnung vorhanden, Überprüfungsdatum, Einreichungsdatum, Annahmedatum, wurde der Antrag akzeptiert?

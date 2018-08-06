@@ -1,5 +1,1 @@
-{{paper-input textarea=true block=true value=test onChange=(action (mut test))}}
-{{svg-diagram content=diagramcontent}}
-{{#each model.decisions as |decision|}}
-  {{decision.explanation}}
-{{/each}}
+{{flow-view model=model}}

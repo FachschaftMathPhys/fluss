@@ -1,23 +1,24 @@
-import DS from 'ember-data';
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
 
-export default DS.Model.extend({
-  submissionDate: DS.attr('date'),
-  pdf: DS.attr('attr'),
-  resolutionDate: DS.attr('date'),
-  reviewDate: DS.attr('date'),
-  approvalDate: DS.attr('date'),
-  mailingDate: DS.attr('date'),
-  printCosts: DS.attr('boolean'),
-  lockerRent: DS.attr('boolean'),
-  miscellenea: DS.attr('string'),
-  postage: DS.attr('boolean'),
-  figure: DS.attr('number'),
-  eventDate: DS.attr('date'),
-  protocolLink: DS.attr('string'),
-  protocolPage: DS.attr('number'),
-  offerComparison: DS.hasMany('offer-comparison'),
-  budgetaryPosition: DS.belongsTo('budgetary-position'),
-  body: DS.belongsTo('body'),
-  user: DS.belongsTo('user'),
-  tbstep: DS.belongsTo('dialogstep',{polymorphic:true})
+export default Model.extend({
+	remoteId: key(), 
+  submissionDate: attr('date'),
+  pdf: attr('attr'),
+  resolutionDate: attr('date'),
+  reviewDate: attr('date'),
+  approvalDate: attr('date'),
+  mailingDate: attr('date'),
+  printCosts: attr('boolean'),
+  lockerRent: attr('boolean'),
+  miscellenea: attr('string'),
+  postage: attr('boolean'),
+  figure: attr('number'),
+  eventDate: attr('date'),
+  protocolLink: attr('string'),
+  protocolPage: attr('number'),
+  offerComparison: hasMany('offer-comparison'),
+  budgetaryPosition: hasOne('budgetary-position'),
+  body: hasOne('body'),
+  user: hasOne('user'),
+  tbstep: hasOne('dialogstep',{polymorphic:true})
 });

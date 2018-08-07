@@ -1,13 +1,14 @@
-import DS from 'ember-data';
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
 
-export default DS.Model.extend({
-  accounts: DS.hasMany('account'),
-  name: DS.attr('string'),
-  username: DS.attr('string'),
-  disbursalRequests: DS.hasMany('disbursal-request'),
-  inpaymentDeclarations: DS.hasMany('inpayment-declaration'),
-  theoretikumBillings: DS.hasMany('theoretikum-billing'),
-  fsResolutions: DS.hasMany('fs-resolution'),
-  financingApplications: DS.hasMany('financing-application'),
-  offerComparisons: DS.hasMany('offer-comparison')
+export default Model.extend({
+	remoteId: key(), 
+  accounts: hasMany('account'),
+  name: attr('string'),
+  username: attr('string'),
+  disbursalRequests: hasMany('disbursal-request'),
+  inpaymentDeclarations: hasMany('inpayment-declaration'),
+  theoretikumBillings: hasMany('theoretikum-billing'),
+  fsResolutions: hasMany('fs-resolution'),
+  financingApplications: hasMany('financing-application'),
+  offerComparisons: hasMany('offer-comparison')
 });

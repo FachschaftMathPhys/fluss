@@ -1,5 +1,6 @@
-import DS from 'ember-data';
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
 
-export default DS.Model.extend({
-  first: DS.belongsTo('dialogstep',{polymorphic:true})
+export default Model.extend({
+	remoteId: key(), 
+  first: hasOne('dialogstep',{polymorphic:true})
 });

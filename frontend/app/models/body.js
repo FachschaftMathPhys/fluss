@@ -1,9 +1,10 @@
-import DS from 'ember-data';
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
 
-export default DS.Model.extend({
-  name: DS.attr('string'),
-  description: DS.attr('string'),
-  disbursalRequests: DS.hasMany('disbursal-request'),
-  inpaymentDeclarations: DS.hasMany('inpayment-declaration'),
-  theoretikumBillings: DS.hasMany('theoretikum-billing')
+export default Model.extend({
+	remoteId: key(),
+  name: attr('string'),
+  description: attr('string'),
+  disbursalRequests: hasMany('disbursal-request'),
+  inpaymentDeclarations: hasMany('inpayment-declaration'),
+  theoretikumBillings: hasMany('theoretikum-billing')
 });

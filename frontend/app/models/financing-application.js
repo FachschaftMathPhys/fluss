@@ -1,13 +1,14 @@
-import DS from 'ember-data';
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
 
-export default DS.Model.extend({
-  sessionDate: DS.attr('date'),
-  figure: DS.attr('number'),
-  applicant: DS.attr('string'),
-  description: DS.attr('string'),
-  justification: DS.attr('string'),
-  miscellenea: DS.attr('string'),
-  offerComparison:DS.hasMany('offer-comparison'),
-  user: DS.belongsTo('user'),
-  fastep: DS.belongsTo('dialogstep',{polymorphic:true})
+export default Model.extend({
+	remoteId: key(), 
+  sessionDate: attr('date'),
+  figure: attr('number'),
+  applicant: attr('string'),
+  description: attr('string'),
+  justification: attr('string'),
+  miscellenea: attr('string'),
+  offerComparison:hasMany('offer-comparison'),
+  user: hasOne('user'),
+  fastep: hasOne('dialogstep',{polymorphic:true})
 });

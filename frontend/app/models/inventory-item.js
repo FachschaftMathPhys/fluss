@@ -1,11 +1,12 @@
-import DS from 'ember-data';
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
 
-export default DS.Model.extend({
-  name: DS.attr('string'),
-  quantity: DS.attr('number'),
-  purchaseDate: DS.attr('date'),
-  price: DS.attr('number'),
-  storageLocation: DS.attr('string'),
-  lentAt: DS.attr('date'),
-  user: DS.belongsTo('user')
+export default Model.extend({
+	remoteId: key(), 
+  name: attr('string'),
+  quantity: attr('number'),
+  purchaseDate: attr('date'),
+  price: attr('number'),
+  storageLocation: attr('string'),
+  lentAt: attr('date'),
+  user: hasOne('user')
 });

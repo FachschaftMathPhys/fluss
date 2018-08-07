@@ -1,12 +1,13 @@
-import DS from 'ember-data';
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
 
-export default DS.Model.extend({
-  classificationNumber: DS.attr('decimal'),
-  amount: DS.attr('decimal'),
-  title: DS.attr('string'),
-  description: DS.attr('string'),
-  examples: DS.attr('string'),
-  disbursalRequests: DS.hasMany('disbursal-request'),
-  inpaymentDeclarations: DS.hasMany('inpayment-declaration'),
-  theoretikumBillings: DS.hasMany('theoretikum-billing')
+export default Model.extend({
+	remoteId: key(), 
+  classificationNumber: attr('decimal'),
+  amount: attr('decimal'),
+  title: attr('string'),
+  description: attr('string'),
+  examples: attr('string'),
+  disbursalRequests: hasMany('disbursal-request'),
+  inpaymentDeclarations: hasMany('inpayment-declaration'),
+  theoretikumBillings: hasMany('theoretikum-billing')
 });

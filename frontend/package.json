@@ -23,9 +23,9 @@
     "ember-cli-babel": "^6.6.0",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.0.0",
-    "ember-cli-htmlbars": "^2.0.1",
+    "ember-cli-htmlbars": "^2.0.4",
     "ember-cli-htmlbars-inline-precompile": "^1.0.0",
-    "ember-cli-inject-live-reload": "^1.4.1",
+    "ember-cli-inject-live-reload": "^1.8.2",
     "ember-cli-qunit": "^4.0.0",
     "ember-cli-rails-addon": "^0.10.0",
     "ember-cli-sass": "^7.2.0",
@@ -34,8 +34,10 @@
     "ember-cli-uglify": "^2.0.0",
     "ember-data": "~2.16.2",
     "ember-export-application-global": "^2.0.0",
+    "ember-fetch": "^5.1.1",
     "ember-load-initializers": "^1.0.0",
-    "ember-paper": "^1.0.0-beta.7",
+    "ember-orbit": "^0.15.6",
+    "ember-paper": "^1.0.0-beta.8",
     "ember-promise-helpers": "^1.0.6",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.16.0",
@@ -46,6 +48,8 @@
     "node": "^4.5 || 6.* || >= 7.*"
   },
   "dependencies": {
+    "@orbit/indexeddb": "0.15.6",
+    "@orbit/jsonapi": "0.15.6",
     "flowchart.js": "^1.11.3"
   }
 }

@@ -1,7 +1,8 @@
-import DS from 'ember-data';
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
 
-export default DS.Model.extend({
-  title: DS.attr('string'),
-  selections: DS.hasMany('selection'),
-  formElements: DS.hasMany('form-element')
+export default Model.extend({
+	remoteId: key(), 
+  title: attr('string'),
+  selections: hasMany('selection'),
+  formElements: hasMany('form-element')
 });

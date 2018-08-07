@@ -1,9 +1,10 @@
-import DS from 'ember-data';
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
 
-export default DS.Model.extend({
-  iban: DS.attr('string'),
-  bic: DS.attr('string'),
-  recipient: DS.attr('string'),
-  user: DS.belongsTo('user'),
-  disbursalRequests: DS.hasMany('disbursal-request')
+export default Model.extend({
+	remoteId: key(),
+  iban: attr('string'),
+  bic: attr('string'),
+  recipient: attr('string'),
+  user: hasOne('user'),
+  disbursalRequests: hasMany('disbursal-request')
 });

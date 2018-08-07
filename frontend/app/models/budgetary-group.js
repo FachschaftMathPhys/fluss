@@ -1,6 +1,7 @@
-import DS from 'ember-data';
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
 
-export default DS.Model.extend({
-  name: DS.attr('string'),
-  budgetaryPositions: DS.hasMany('budgetary-position')
+export default Model.extend({
+	remoteId: key(),
+  name: attr('string'),
+  budgetaryPositions: hasMany('budgetary-position')
 });

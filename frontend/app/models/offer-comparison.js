@@ -1,19 +1,20 @@
-import DS from 'ember-data';
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
 
-export default DS.Model.extend({
-  price1: DS.attr('number'),
-  price2: DS.attr('number'),
-  price3: DS.attr('number'),
-  productDescription1: DS.attr('string'),
-  productDescription2: DS.attr('string'),
-  productDescription3: DS.attr('string'),
-  offeror1: DS.attr('string'),
-  offeror2: DS.attr('string'),
-  offeror3: DS.attr('string'),
-  link1: DS.attr('string'),
-  link2: DS.attr('string'),
-  link3: DS.attr('string'),
-  explanation: DS.attr('string'),
-  user: DS.belongsTo('user'),
-  ocstep: DS.belongsTo('dialogstep',{polymorphic:true})
+export default Model.extend({
+	remoteId: key(), 
+  price1: attr('number'),
+  price2: attr('number'),
+  price3: attr('number'),
+  productDescription1: attr('string'),
+  productDescription2: attr('string'),
+  productDescription3: attr('string'),
+  offeror1: attr('string'),
+  offeror2: attr('string'),
+  offeror3: attr('string'),
+  link1: attr('string'),
+  link2: attr('string'),
+  link3: attr('string'),
+  explanation: attr('string'),
+  user: hasOne('user'),
+  ocstep: hasOne('dialogstep',{polymorphic:true})
 });

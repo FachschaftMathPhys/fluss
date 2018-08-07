@@ -1,9 +1,10 @@
-import DS from 'ember-data';
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
 
-export default DS.Model.extend({
-  percentage: DS.attr('number'),
-  quantity: DS.attr('number'),
-  volume: DS.attr('number'),
-  name: DS.attr('string'),
-  disbursalRequest: DS.belongsTo('disbursal-request')
+export default Model.extend({
+	remoteId: key(), 
+  percentage: attr('number'),
+  quantity: attr('number'),
+  volume: attr('number'),
+  name: attr('string'),
+  disbursalRequest: hasOne('disbursal-request')
 });

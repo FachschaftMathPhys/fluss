@@ -1,7 +1,7 @@
-import DS from 'ember-data';
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
 import Dialogstep from './dialogstep';
 
 export default Dialogstep.extend({
-  model: DS.attr('string'),
-  initfollowup: DS.belongsTo('dialogstep',{polymorphic:true}),
+  model: attr('string'),
+  initfollowup: hasOne('dialogstep',{polymorphic:true}),
 });

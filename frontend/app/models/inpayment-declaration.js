@@ -1,20 +1,21 @@
-import DS from 'ember-data';
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
 
-export default DS.Model.extend({
-  figure: DS.attr('number'),
-  incomeDate: DS.attr('date'),
-  pdf: DS.attr('attr'),
-  eventDate: DS.attr('date'),
-  depositDate: DS.attr('date'),
-  depositReceipt: DS.attr('boolean'),
-  mailingDate: DS.attr('date'),
-  incomeTestatment: DS.attr('boolean'),
-  reviewDate: DS.attr('date'),
-  submissionDate: DS.attr('date'),
-  approvalDate: DS.attr('date'),
-  authorized: DS.attr('boolean'),
-  body: DS.belongsTo('body'),
-  budgetaryPosition: DS.belongsTo('budgetary-position'),
-  user: DS.belongsTo('user'),
-  idstep: DS.belongsTo('dialogstep',{polymorphic:true})
+export default Model.extend({
+	remoteId: key(), 
+  figure: attr('number'),
+  incomeDate: attr('date'),
+  pdf: attr('attr'),
+  eventDate: attr('date'),
+  depositDate: attr('date'),
+  depositReceipt: attr('boolean'),
+  mailingDate: attr('date'),
+  incomeTestatment: attr('boolean'),
+  reviewDate: attr('date'),
+  submissionDate: attr('date'),
+  approvalDate: attr('date'),
+  authorized: attr('boolean'),
+  body: hasOne('body'),
+  budgetaryPosition: hasOne('budgetary-position'),
+  user: hasOne('user'),
+  idstep: hasOne('dialogstep',{polymorphic:true})
 });

@@ -1,5 +1,37 @@
 # Change Log
 
+## [v1.8.2](https://github.com/ember-cli/ember-cli-inject-live-reload/tree/v1.8.2) (2018-08-03)
+[Full Changelog](https://github.com/ember-cli/ember-cli-inject-live-reload/compare/v1.8.1...v1.8.2)
+
+**Merged pull requests:**
+
+- Passing port and host to livereload.js file as regex fails to parse URL with prefix [\#51](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/51) ([SparshithNR](https://github.com/SparshithNR))
+
+## [v1.8.1](https://github.com/ember-cli/ember-cli-inject-live-reload/tree/v1.8.1) (2018-07-24)
+[Full Changelog](https://github.com/ember-cli/ember-cli-inject-live-reload/compare/v1.8.0...v1.8.1)
+
+**Merged pull requests:**
+
+- fix undefined error when options.liveReloadPrefix is undefined [\#50](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/50) ([SparshithNR](https://github.com/SparshithNR))
+
+## [v1.8.0](https://github.com/ember-cli/ember-cli-inject-live-reload/tree/v1.8.0) (2018-07-24)
+[Full Changelog](https://github.com/ember-cli/ember-cli-inject-live-reload/compare/v1.7.0...v1.8.0)
+
+**Implemented enhancements:**
+
+- Consider liveReloadPrefix option which got added into tiny-lr [\#49](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/49) ([SparshithNR](https://github.com/SparshithNR))
+
+## [v1.7.0](https://github.com/ember-cli/ember-cli-inject-live-reload/tree/v1.7.0) (2017-07-14)
+[Full Changelog](https://github.com/ember-cli/ember-cli-inject-live-reload/compare/v1.6.1...v1.7.0)
+
+**Fixed bugs:**
+
+- When using the liveReloadBaseUrl with an absolute URL, the non-path portion should be stripped when setting up middleware. [\#36](https://github.com/ember-cli/ember-cli-inject-live-reload/pull/36) ([lukemelia](https://github.com/lukemelia))
+
+**Closed issues:**
+
+- Is it possible to remove the need for a liveReloadPort added to the livereload url [\#43](https://github.com/ember-cli/ember-cli-inject-live-reload/issues/43)
+
 ## [v1.6.1](https://github.com/ember-cli/ember-cli-inject-live-reload/tree/v1.6.1) (2017-01-19)
 [Full Changelog](https://github.com/ember-cli/ember-cli-inject-live-reload/compare/v1.6.0...v1.6.1)
 

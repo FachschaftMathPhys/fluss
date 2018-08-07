@@ -1,7 +1,8 @@
-import DS from 'ember-data';
-const {attr,hasMany,belongsTo} = DS
-export default DS.Model.extend({
+import { Model, attr, key, hasOne, hasMany } from 'ember-orbit';
+
+export default Model.extend({
+	remoteId: key(),
   label: attr('string'),
   decisions: hasMany('decision',{inverse: "ownoptions"}),
-  optionfollowup: belongsTo('dialogstep',{polymorphic:true})
+  optionfollowup: hasOne('dialogstep',{polymorphic:true})
 });
